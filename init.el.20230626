@@ -5,56 +5,25 @@
 (global-set-key (kbd "C-u C-b") 'ibuffer)
 
 
-;; 编码设置
+;;;; 编码设置
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-
-;; 取消菜单栏
+;;;; 界面显示设置
+;; 取消菜单栏/工具栏/滚动条
 (menu-bar-mode 0)
-
-;; 关闭文件自动备份,  不要后缀~的备份文件
-(setq make-backup-files nil)
-
-
-;; 自动加载
-(global-auto-revert-mode t)
-
-;; 缩进空格设置
-(setq default-tab-width 4)
-(setq indent-tabs-mode nil)
-
-
-;; 显示行号
-(global-linum-mode 1)
-(setq linum-format "%4d| ")
-
-
-;; 高亮当前行
-(global-hl-line-mode t)
-(global-visual-line-mode 1)
-
+(tool-bar-mode 0)
+(when (display-graphic-p) (toggle-scroll-bar 0))
 
 ;; Emacs自带主题
 (load-theme 'manoj-dark t)
 
-
-;; emacs 括号匹配/匹配高亮/对齐
-(setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
-(electric-pair-mode t)
-(add-hook 'prog-mode-hook #'show-paren-mode)
-(add-hook 'prog-mode-hook #'electric-pair-mode)
-
-
-;; 保存时删除多余空白字符
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
-;; emacs可以与外部粘贴
-(setq x-select-enable-clipboard t)
+;; 显示行号
+(global-linum-mode 1)
+(setq linum-format "%4d| ")
 
 ;; 显示时间
 (display-time-mode 1)
@@ -62,8 +31,37 @@
 (setq display-time-day-and-date t)
 (display-time-mode 1)
 
+
+;;;; 基础设置
+;; 关闭文件自动备份,  不要后缀~的备份文件
+(setq make-backup-files nil)
+
+;; 自动加载
+(global-auto-revert-mode t)
+
+;; 高亮当前行
+(global-hl-line-mode t)
+(global-visual-line-mode 1)
+
+;; 保存时删除多余空白字符
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; emacs可以与外部粘贴
+(setq x-select-enable-clipboard t)
+
 ;; 鼠标支持
 (xterm-mouse-mode t)
+
+;;;; 编码设置
+;; 缩进空格设置
+(setq default-tab-width 4)
+(setq indent-tabs-mode nil)
+
+;; emacs 括号匹配/匹配高亮/对齐
+(setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+(electric-pair-mode t)
+(add-hook 'prog-mode-hook #'show-paren-mode)
+(add-hook 'prog-mode-hook #'electric-pair-mode)
 
 ;; hippie-expand Emacs自带补全
 (setq hippie-expand-try-function-list
