@@ -1,3 +1,30 @@
+;;;; 插件设置
+(require 'package)
+;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+
+(require 'go-mode)
+(require 'neotree)
+(global-set-key [f2] 'neotree-toggle)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default)))
+ '(package-selected-packages (quote (company gruvbox-theme neotree go-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
 ;;;; 快捷键设置
 ;; 使用C-u 替换C-x
 (global-set-key (kbd "C-u") ctl-x-map)
@@ -19,7 +46,9 @@
 (when (display-graphic-p) (toggle-scroll-bar 0))
 
 ;; Emacs自带主题
-(load-theme 'manoj-dark t)
+;;(load-theme 'manoj-dark t)
+(require 'gruvbox-theme)
+(load-theme 'gruvbox-dark-medium)
 
 ;; 显示行号
 (global-linum-mode 1)
@@ -76,3 +105,6 @@
 		try-complete-lisp-symbol-partially
 		try-complete-lisp-symbol))
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+;; company 补全插件
+(add-hook 'after-init-hook 'global-company-mode)

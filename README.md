@@ -1,6 +1,7 @@
-# Emacs
+# Emacs 使用学习
 
-## 修改记录
-1. 2022-04-17 创建项目，添加第一次的init.el
-
-自己学习Emacs使用
+## 功能
+- 补全: company
+- 目录: neotree
+- 主题: gruvbox
+- Go支持: go-mode
