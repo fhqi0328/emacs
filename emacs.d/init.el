@@ -14,7 +14,7 @@
     ("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default)))
  '(package-selected-packages
    (quote
-    (markdown-mode company gruvbox-theme neotree go-mode))))
+    (helm markdown-mode company gruvbox-theme neotree go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +39,9 @@
       company-show-numbers t
       company-selection-wrap-around t)
 
+;; helm配置
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 
 ;;;; 快捷键设置
