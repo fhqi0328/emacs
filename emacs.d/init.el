@@ -1,12 +1,8 @@
-;;;; 插件设置
+;;;; 插件安装
 (require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
-
-(require 'go-mode)
-(require 'neotree)
-(global-set-key [f2] 'neotree-toggle)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -16,7 +12,9 @@
  '(custom-safe-themes
    (quote
     ("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default)))
- '(package-selected-packages (quote (company gruvbox-theme neotree go-mode))))
+ '(package-selected-packages
+   (quote
+    (markdown-mode company gruvbox-theme neotree go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,12 +22,36 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;;; 插件设置
+
+;; go支持
+(require 'go-mode)
+
+;; 目录插件
+(require 'neotree)
+(global-set-key [f2] 'neotree-toggle)
+
+;; company 补全插件
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-minimum-prefix-length 1
+      company-tooltip-align-annotations t
+      company-idle-delay 0.0
+      company-show-numbers t
+      company-selection-wrap-around t)
+
+
 
 ;;;; 快捷键设置
 ;; 使用C-u 替换C-x
 (global-set-key (kbd "C-u") ctl-x-map)
 ;; C-u C-b 打开ibuffer
 (global-set-key (kbd "C-u C-b") 'ibuffer)
+;; 交换M-w/C-w
+(global-set-key (kbd "M-w") 'kill-region)
+(global-set-key (kbd "C-w") 'kill-ring-save)
+;; 交换C-a/M-m
+(global-set-key (kbd "C-a") 'back-to-indentation)
+(global-set-key (kbd "M-m") 'move-beginning-of-line)
 
 
 ;;;; 编码设置
@@ -91,20 +113,3 @@
 (electric-pair-mode t)
 (add-hook 'prog-mode-hook #'show-paren-mode)
 (add-hook 'prog-mode-hook #'electric-pair-mode)
-
-;; hippie-expand Emacs自带补全
-(setq hippie-expand-try-function-list
-	  '(try-expand-debbrev
-		try-expand-debbrev-all-buffers
-		try-expand-debbrev-from-kill
-		try-complete-file-name-partially
-		try-complete-file-name
-		try-expand-all-abbrevs
-		try-expand-list
-		try-expand-line
-		try-complete-lisp-symbol-partially
-		try-complete-lisp-symbol))
-(global-set-key (kbd "M-/") 'hippie-expand)
-
-;; company 补全插件
-(add-hook 'after-init-hook 'global-company-mode)
