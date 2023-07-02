@@ -55,6 +55,11 @@
 ;; 交换C-a/M-m
 (global-set-key (kbd "C-a") 'back-to-indentation)
 (global-set-key (kbd "M-m") 'move-beginning-of-line)
+;; 移动段落
+(global-set-key (kbd "M-]") 'forward-paragraph)
+(global-set-key (kbd "M-[") 'backward-paragraph)
+;; 跳到指定行
+(global-set-key (kbd "M-g") 'goto-line)
 
 
 ;;;; 编码设置
