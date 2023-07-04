@@ -1,3 +1,14 @@
 ls -l
 ls -l
 go run hello_world.go 
+exit
+ls -l
+cd ..
+cd ..
+ls -l
+mv /data/work/videos/pgqaNyRIJgAYfSxcMl5bkQ==.mp4 ./tests/data/
+ls -l tests/data/
+./run.sh test
+]
+cd ..
+./cmd/run.sh 

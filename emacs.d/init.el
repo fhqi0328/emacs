@@ -10,11 +10,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default)))
+   '("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default))
  '(package-selected-packages
-   (quote
-    (helm markdown-mode company gruvbox-theme neotree go-mode))))
+   '(ivy ivy-file-preview helm markdown-mode company gruvbox-theme neotree go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -56,10 +54,10 @@
 (global-set-key (kbd "C-a") 'back-to-indentation)
 (global-set-key (kbd "M-m") 'move-beginning-of-line)
 ;; 移动段落
-(global-set-key (kbd "M-]") 'forward-paragraph)
-(global-set-key (kbd "M-[") 'backward-paragraph)
+;;(global-set-key (kbd "M-]") 'forward-paragraph)
+;;(global-set-key (kbd "M-[") 'backward-paragraph)
 ;; 跳到指定行
-(global-set-key (kbd "M-g") 'goto-line)
+;;(global-set-key (kbd "M-g") 'goto-line)
 
 
 ;;;; 编码设置
