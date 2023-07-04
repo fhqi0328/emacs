@@ -1,7 +1,7 @@
 ;;;; 插件安装
 (require 'package)
-;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (custom-set-variables
@@ -9,10 +9,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" default))
  '(package-selected-packages
-   '(ivy ivy-file-preview helm markdown-mode company gruvbox-theme neotree go-mode)))
+   (quote
+	(counsel ivy-searcher swiper ivy ivy-file-preview company gruvbox-theme neotree go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,9 +36,13 @@
       company-show-numbers t
       company-selection-wrap-around t)
 
-;; helm配置
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; ivy配置
+(require 'ivy)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "C-u b") 'ivy-switch-buffer)
 
 
 ;;;; 快捷键设置
@@ -53,11 +56,11 @@
 ;; 交换C-a/M-m
 (global-set-key (kbd "C-a") 'back-to-indentation)
 (global-set-key (kbd "M-m") 'move-beginning-of-line)
-;; 移动段落
-;;(global-set-key (kbd "M-]") 'forward-paragraph)
-;;(global-set-key (kbd "M-[") 'backward-paragraph)
-;; 跳到指定行
-;;(global-set-key (kbd "M-g") 'goto-line)
+;; 使用C-u s代替 C-x C-s
+(global-set-key (kbd "C-u s") 'save-buffer)
+;; 使用C-u |- 分隔
+(global-set-key (kbd "C-u -") 'split-window-below)
+(global-set-key (kbd "C-u |") 'split-window-right)
 
 
 ;;;; 编码设置
@@ -67,16 +70,16 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+
 ;;;; 界面显示设置
 ;; 取消菜单栏/工具栏/滚动条
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (when (display-graphic-p) (toggle-scroll-bar 0))
 
-;; Emacs自带主题
-;;(load-theme 'manoj-dark t)
-(require 'gruvbox-theme)
-(load-theme 'gruvbox-dark-medium)
+;; Emacs主题
+(load-theme 'manoj-dark t)
+;;(require 'gruvbox-theme)
 
 ;; 显示行号
 (global-linum-mode 1)
