@@ -1,3 +1,21 @@
+;;;; 快捷键设置
+;; 使用C-u 替换C-x
+(global-set-key (kbd "C-u") ctl-x-map)
+;; C-u C-b 打开ibuffer
+(global-set-key (kbd "C-u C-b") 'ibuffer)
+;; 交换M-w/C-w
+(global-set-key (kbd "M-w") 'kill-region)
+(global-set-key (kbd "C-w") 'kill-ring-save)
+;; 交换C-a/M-m
+(global-set-key (kbd "C-a") 'back-to-indentation)
+(global-set-key (kbd "M-m") 'move-beginning-of-line)
+;; 使用C-u s代替 C-x C-s
+(global-set-key (kbd "C-u s") 'save-buffer)
+;; 使用C-u |- 分隔
+(global-set-key (kbd "C-u -") 'split-window-below)
+(global-set-key (kbd "C-u |") 'split-window-right)
+
+
 ;;;; 插件安装
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -44,23 +62,6 @@
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "C-u b") 'ivy-switch-buffer)
 
-
-;;;; 快捷键设置
-;; 使用C-u 替换C-x
-(global-set-key (kbd "C-u") ctl-x-map)
-;; C-u C-b 打开ibuffer
-(global-set-key (kbd "C-u C-b") 'ibuffer)
-;; 交换M-w/C-w
-(global-set-key (kbd "M-w") 'kill-region)
-(global-set-key (kbd "C-w") 'kill-ring-save)
-;; 交换C-a/M-m
-(global-set-key (kbd "C-a") 'back-to-indentation)
-(global-set-key (kbd "M-m") 'move-beginning-of-line)
-;; 使用C-u s代替 C-x C-s
-(global-set-key (kbd "C-u s") 'save-buffer)
-;; 使用C-u |- 分隔
-(global-set-key (kbd "C-u -") 'split-window-below)
-(global-set-key (kbd "C-u |") 'split-window-right)
 
 
 ;;;; 编码设置
