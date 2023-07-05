@@ -1,11 +1,14 @@
+(load "server")
+(unless (server-running-p) (server-start))
+
 ;;;; 快捷键设置
 ;; 使用C-u 替换C-x
 (global-set-key (kbd "C-u") ctl-x-map)
 ;; C-u C-b 打开ibuffer
 (global-set-key (kbd "C-u C-b") 'ibuffer)
 ;; 交换M-w/C-w
-(global-set-key (kbd "M-w") 'kill-region)
-(global-set-key (kbd "C-w") 'kill-ring-save)
+;;(global-set-key (kbd "M-w") 'kill-region)
+;;(global-set-key (kbd "C-w") 'kill-ring-save)
 ;; 交换C-a/M-m
 (global-set-key (kbd "C-a") 'back-to-indentation)
 (global-set-key (kbd "M-m") 'move-beginning-of-line)
@@ -37,8 +40,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-;;;; 插件设置
 
+;;;; 插件设置
 ;; go支持
 (require 'go-mode)
 
