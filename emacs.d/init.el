@@ -39,7 +39,9 @@
   :ensure t
   :bind (("C-s" . swiper-isearch)
 	 ("C-x b" . ivy-switch-buffer))
-  :init (setq ivy-count-format "(%d/%d) ")
+  :init (setq ivy-count-format "(%d/%d) "
+              ivy-use-virtual-buffers t
+              enable-recursive-minibuffers t)
   :config (ivy-mode 1))
 
 (use-package company  
@@ -56,7 +58,11 @@
 (use-package gruvbox-theme
   ;; color theme
   :ensure t
-  :config (load-theme 'gruvbox t))
+  :config (load-theme 'gruvbox-dark-soft t))
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 
 
 ;;;;;;; 基础设置
@@ -80,6 +86,12 @@
 
 ;; 取消生成的auto-save-list目录
 (setq auto-save-list-file-prefix nil)
+
+;; 连续滚动
+(setq scroll-step 1
+      scroll-margin 1)
+
+
 
 
 ;;;;;;; 外观设置
@@ -113,6 +125,10 @@
 (setq default-tab-width 4)
 (setq indent-tabs-mode nil)
 
+;; 显示括号匹配
+(show-paren-mode 1)
+
+
 
 
 ;;;;;;; 快捷键设置
@@ -137,7 +153,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("7b8f5bbdc7c316ee62f271acf6bcd0e0b8a272fdffe908f8c920b0ba34871d98" default))
- '(package-selected-packages '(gruvbox-theme ivy go-mode neotree use-package)))
+ '(package-selected-packages '(flycheck gruvbox-theme ivy go-mode neotree use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
