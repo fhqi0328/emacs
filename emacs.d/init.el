@@ -122,6 +122,12 @@
 (global-set-key (kbd "C-,") 'other-window)
 ;; 使用C-x w切换窗口, 取代C-x o
 (global-set-key (kbd "C-x w") 'other-window)
+;; 使用C-c C-c 映射到Comment-or-uncomment-region
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
+;; 使用<f5>在项目中正则搜索文本
+(global-set-key (kbd "<f5>") 'project-find-regexp)
+;; 使用<f6>在项目中搜索文件
+(global-set-key (kbd "<f6>") 'project-find-file)
 
 
 (custom-set-variables
