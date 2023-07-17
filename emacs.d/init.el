@@ -55,7 +55,8 @@
 
 (use-package gruvbox-theme
   ;; color theme
-  :ensure t)
+  :ensure t
+  :config (load-theme 'gruvbox t))
 
 
 ;;;;;;; 基础设置
@@ -94,7 +95,7 @@
 
 ;; Emacs主题
 ;;(load-theme 'manoj-dark t)
-(load-theme 'gruvbox)
+(load-theme 'gruvbox t)
 
 ;; 高亮当前行
 (global-hl-line-mode t)
