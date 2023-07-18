@@ -132,9 +132,10 @@
 
 ;;;;;;; 快捷键设置
 ;; sh-mode-map下的快捷键
-(define-key sh-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region)
-(define-key sh-mode-map (kbd "C-c C-s") 'project-find-regexp)
-(define-key sh-mode-map (kbd "C-c C-f") 'project-find-file)
+(with-eval-after-load "sh-script"
+  (define-key sh-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region)
+  (define-key sh-mode-map (kbd "C-c C-s") 'project-find-regexp)
+  (define-key sh-mode-map (kbd "C-c C-f") 'project-find-file))
 
 
 ;; 使用ibuffer替换原buffer
