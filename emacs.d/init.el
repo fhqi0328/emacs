@@ -60,9 +60,9 @@
   :ensure t
   :config (load-theme 'gruvbox-dark-soft t))
 
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
+;; (use-package flycheck
+;;   :ensure t
+;;   :init (global-flycheck-mode))
 
 
 ;;;;;;; 基础设置
@@ -130,20 +130,25 @@
 
 
 
-
 ;;;;;;; 快捷键设置
+;; sh-mode-map下的快捷键
+(define-key sh-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region)
+(define-key sh-mode-map (kbd "C-c C-s") 'project-find-regexp)
+(define-key sh-mode-map (kbd "C-c C-f") 'project-find-file)
+
+
 ;; 使用ibuffer替换原buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-;; 使用C-,切换窗口，取代C-x o
-(global-set-key (kbd "C-,") 'other-window)
-;; 使用C-x w切换窗口, 取代C-x o
-(global-set-key (kbd "C-x w") 'other-window)
-;; 使用C-c C-c 映射到Comment-or-uncomment-region
+;; 使用C-x C-w切换窗口
+(global-set-key (kbd "C-x C-w") 'other-window)
+;; 使用C-c C-c注释/取消注释
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
-;; 使用<f5>在项目中正则搜索文本
-(global-set-key (kbd "<f5>") 'project-find-regexp)
-;; 使用<f6>在项目中搜索文件
-(global-set-key (kbd "<f6>") 'project-find-file)
+;; 使用C-c C-s在项目中正则搜索文本
+(global-set-key (kbd "C-c C-s") 'project-find-regexp)
+;; 使用C-c C-f在项目中搜索文件
+(global-set-key (kbd "C-c C-f") 'project-find-file)
+;; 使用C-x C-a保留当前窗口
+(global-set-key (kbd "C-x C-a") 'delete-other-windows)
 
 
 (custom-set-variables
