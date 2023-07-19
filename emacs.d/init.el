@@ -6,6 +6,7 @@
 (prefer-coding-system 'utf-8)
 
 
+
 ;;;;;;; 插件安装
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -60,12 +61,8 @@
   :ensure t
   :config (load-theme 'gruvbox-dark-soft t))
 
-;; (use-package flycheck
-;;   :ensure t
-;;   :init (global-flycheck-mode))
 
-
-;;;;;;; 基础设置
+;;;;;;;; 基础设置
 ;; 关闭文件自动备份
 (setq make-backup-files nil)
 
@@ -91,7 +88,8 @@
 (setq scroll-step 1
       scroll-margin 1)
 
-
+;; 使用y/n 代替yes/no
+(defalias 'y-or-n-p 'yes-or-no-p)
 
 
 ;;;;;;; 外观设置
@@ -105,9 +103,8 @@
 (global-linum-mode 1)
 (setq linum-format "%4d|")
 
-;; Emacs主题
-;;(load-theme 'manoj-dark t)
-(load-theme 'gruvbox t)
+;; Emacs主题(或在use-package配置)
+;; (load-theme 'manoj-dark t)
 
 ;; 高亮当前行
 (global-hl-line-mode t)
@@ -137,9 +134,13 @@
   (define-key sh-mode-map (kbd "C-c C-s") 'project-find-regexp)
   (define-key sh-mode-map (kbd "C-c C-f") 'project-find-file))
 
-
 ;; 使用ibuffer替换原buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
+
+
+;; M-g 跳转到指定行
+(global-set-key (kbd "M-g") 'goto-line)
 
 ;; 使用C-c C-c注释/取消注释
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
@@ -151,24 +152,9 @@
 ;; 使用C-2或C-@ 进行set mark
 (global-set-key (kbd "C-2") 'set-mark-command)
 
-;; 使用C-o 切换窗口
-(global-set-key (kbd "C-o") 'other-window)
-;; 使用C-q 退出当前窗口
-(global-set-key (kbd "C-q") 'delete-window)
+;; 使用M-o切换窗口
+(global-set-key (kbd "M-o") 'other-window)
+;; 使用M-q关闭当前窗口
+(global-set-key (kbd "M-q") 'delete-window)
 
 
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("7b8f5bbdc7c316ee62f271acf6bcd0e0b8a272fdffe908f8c920b0ba34871d98" default))
- '(package-selected-packages '(flycheck gruvbox-theme ivy go-mode neotree use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
