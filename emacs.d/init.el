@@ -140,14 +140,21 @@
 
 ;; 使用ibuffer替换原buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-;; 使用C-x C-w切换窗口
-(global-set-key (kbd "C-x C-a") 'other-window)
+
 ;; 使用C-c C-c注释/取消注释
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 ;; 使用C-c C-s在项目中正则搜索文本
 (global-set-key (kbd "C-c C-s") 'project-find-regexp)
 ;; 使用C-c C-f在项目中搜索文件
 (global-set-key (kbd "C-c C-f") 'project-find-file)
+
+;; 使用C-2或C-@ 进行set mark
+(global-set-key (kbd "C-2") 'set-mark-command)
+
+;; 使用C-o 切换窗口
+(global-set-key (kbd "C-o") 'other-window)
+;; 使用C-q 退出当前窗口
+(global-set-key (kbd "C-q") 'delete-window)
 
 
 
