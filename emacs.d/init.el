@@ -45,7 +45,7 @@
               enable-recursive-minibuffers t)
   :config (ivy-mode 1))
 
-(use-package company  
+(use-package company
   :ensure t
   :commands company-mode
   :init (setq company-minimum-prefix-length 1
@@ -103,9 +103,6 @@
 (global-linum-mode 1)
 (setq linum-format "%4d|")
 
-;; Emacs主题(或在use-package配置)
-;; (load-theme 'manoj-dark t)
-
 ;; 高亮当前行
 (global-hl-line-mode t)
 (global-visual-line-mode 1)
@@ -120,7 +117,8 @@
 ;;;;;;; 编程设置
 ;; tab设置
 (setq default-tab-width 4)
-(setq indent-tabs-mode nil)
+(setq indent-tabs-mode t)
+
 
 ;; 显示括号匹配
 (show-paren-mode 1)
@@ -152,9 +150,6 @@
 ;; 使用C-2或C-@ 进行set mark
 (global-set-key (kbd "C-2") 'set-mark-command)
 
-;; 使用M-o切换窗口
-(global-set-key (kbd "M-o") 'other-window)
-;; 使用M-q关闭当前窗口
-(global-set-key (kbd "M-q") 'delete-window)
-
+;; 使用C-o切换窗口
+(global-set-key (kbd "C-o") 'other-window)
 
