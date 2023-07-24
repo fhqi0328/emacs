@@ -39,6 +39,7 @@
 (use-package ivy
   :ensure t
   :bind (("C-s" . swiper-isearch)
+	 ("C-r" . swiper-isearch-backward)
 	 ("C-x b" . ivy-switch-buffer))
   :init (setq ivy-count-format "(%d/%d) "
               ivy-use-virtual-buffers t
@@ -59,7 +60,7 @@
 (use-package gruvbox-theme
   ;; color theme
   :ensure t
-  :config (load-theme 'gruvbox-dark-soft t))
+  :config (load-theme 'gruvbox-dark-hard t))
 
 
 ;;;;;;;; 基础设置
@@ -92,6 +93,7 @@
 (defalias 'y-or-n-p 'yes-or-no-p)
 
 
+
 ;;;;;;; 外观设置
 ;; 取消菜单栏/工具栏/滚动条
 (menu-bar-mode 0)
@@ -112,6 +114,12 @@
 
 ;; 取消欢迎界面
 (setq inhibit-startup-screen t)
+
+;; 显示时间
+(display-time-mode t)
+
+;; 主题设置
+;; (load-theme 'tsdh-dark t)
 
 
 ;;;;;;; 编程设置
@@ -135,8 +143,6 @@
 ;; 使用ibuffer替换原buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-
-
 ;; M-g 跳转到指定行
 (global-set-key (kbd "M-g") 'goto-line)
 
@@ -153,3 +159,5 @@
 ;; 使用C-o切换窗口
 (global-set-key (kbd "C-o") 'other-window)
 
+;; 使用<F1>切换窗口
+(global-set-key (kbd "<f1>") 'other-window)
