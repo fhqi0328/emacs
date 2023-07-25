@@ -57,10 +57,10 @@
   :hook ((prog-mode . company-mode)
 	 (text-mode . company-mode)))
 
-(use-package gruvbox-theme
-  ;; color theme
-  :ensure t
-  :config (load-theme 'gruvbox-dark-hard t))
+;; (use-package gruvbox-theme
+;;   ;; color theme
+;;   :ensure t
+;;   :config (load-theme 'gruvbox-dark-hard t))
 
 
 ;;;;;;;; 基础设置
@@ -105,6 +105,9 @@
 (global-linum-mode 1)
 (setq linum-format "%4d|")
 
+;; 显示列号
+(column-number-mode t)
+
 ;; 高亮当前行
 (global-hl-line-mode t)
 (global-visual-line-mode 1)
@@ -119,7 +122,11 @@
 (display-time-mode t)
 
 ;; 主题设置
-;; (load-theme 'tsdh-dark t)
+(load-theme 'wombat t)
+
+;; 显示列线
+(setq display-fill-column-indicator-column 120)
+(global-display-fill-column-indicator-mode t)
 
 
 ;;;;;;; 编程设置
@@ -161,3 +168,18 @@
 
 ;; 使用<F1>切换窗口
 (global-set-key (kbd "<f1>") 'other-window)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(use-package neotree monokai-theme ivy-file-preview gruvbox-theme goto-chg go-mode flycheck counsel company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
