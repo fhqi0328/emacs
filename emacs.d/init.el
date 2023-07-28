@@ -64,13 +64,24 @@
   :ensure t
   :config (load-theme 'gruvbox-dark-hard t))
 
+(use-package evil-collection
+  ;; a key-collection for evil mode
+  :ensure t
+  :init (setq evil-want-keybinding nil))
+
 (use-package evil
   ;; add vim mode for Emacs
   :ensure t
   :init
   (setq evil-want-C-u-scroll t)
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
+  (evil-set-initial-state 'xref--xref-buffer-mode 'normal)
+  (evil-collection-set-readonly-bindings 'xref--xref-buffer-mode-map)
+  (evil-collection-define-key 'normal 'xref--xref-buffer-mode-map
+    (kbd "RET") 'xref-goto-xref)
+  (define-key evil-motion-state-map (kbd "RET") 'Buffer-menu-this-window)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   (define-key evil-normal-state-map (kbd "/") 'swiper-isearch))
 
