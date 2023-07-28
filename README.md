@@ -8,3 +8,4 @@ emacs version >= 27
 - 目录		: neotree
 - Go支持	: go-mode
 - 基本增强	: ivy
+- Vim插件	: evil
