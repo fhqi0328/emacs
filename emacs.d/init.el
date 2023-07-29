@@ -64,27 +64,27 @@
   :ensure t
   :config (load-theme 'gruvbox-dark-hard t))
 
-(use-package evil-collection
-  ;; a key-collection for evil mode
-  :ensure t
-  :init (setq evil-want-keybinding nil))
+;; (use-package evil-collection
+;;   ;; a key-collection for evil mode
+;;   :ensure t
+;;   :init (setq evil-want-keybinding nil))
 
-(use-package evil
-  ;; add vim mode for Emacs
-  :ensure t
-  :init
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-keybinding nil)
-  :config
-  (evil-mode 1)
-  (evil-set-initial-state 'xref--xref-buffer-mode 'normal)
-  (evil-collection-set-readonly-bindings 'xref--xref-buffer-mode-map)
-  (evil-collection-define-key 'normal 'xref--xref-buffer-mode-map
-    (kbd "RET") 'xref-goto-xref)
-  (define-key evil-motion-state-map (kbd "RET") 'Buffer-menu-this-window)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-normal-state-map (kbd "?") 'swiper-isearch-backward)
-  (define-key evil-normal-state-map (kbd "/") 'swiper-isearch))
+;; (use-package evil
+;;   ;; add vim mode for Emacs
+;;   :ensure t
+;;   :init
+;;   (setq evil-want-C-u-scroll t)
+;;   (setq evil-want-keybinding nil)
+;;   :config
+;;   (evil-mode 1)
+;;   (evil-set-initial-state 'xref--xref-buffer-mode 'normal)
+;;   (evil-collection-set-readonly-bindings 'xref--xref-buffer-mode-map)
+;;   (evil-collection-define-key 'normal 'xref--xref-buffer-mode-map
+;;     (kbd "RET") 'xref-goto-xref)
+;;   (define-key evil-motion-state-map (kbd "RET") 'Buffer-menu-this-window)
+;;   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+;;   (define-key evil-normal-state-map (kbd "?") 'swiper-isearch-backward)
+;;   (define-key evil-normal-state-map (kbd "/") 'swiper-isearch))
 
 
 ;;;;;;;; 基础设置
@@ -120,7 +120,7 @@
 (mouse-avoidance-mode 'animate)
 
 ;; C-k删除当前位置到行未内容
-(setq-default kill-whole-line t)
+;; (setq-default kill-whole-line t)
 
 ;; 设置默认shell
 (setq-default shell-file-name "/bin/bash")
@@ -158,14 +158,14 @@
 
 ;; 显示列线
 ;; (setq display-fill-column-indicator-column 120)
-;; (global-display-fill-column-indicator-mode t)
+(global-display-fill-column-indicator-mode t)
+(set-fill-column 120)
 
 
 ;;;;;;; 编程设置
 ;; tab设置
 (setq default-tab-width 4)
 (setq indent-tabs-mode t)
-
 
 ;; 显示括号匹配
 (show-paren-mode 1)
@@ -198,6 +198,10 @@
 ;; 使用C-o切换窗口
 (global-set-key (kbd "C-o") 'other-window)
 
+;; 使用ctrl-<backspace> to kill word, not working when ssh
+(global-set-key (kbd "C-<DEL>") 'backward-kill-word)
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -205,6 +209,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
+   '("3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "833ddce3314a4e28411edf3c6efde468f6f2616fc31e17a62587d6a9255f4633" "d89e15a34261019eec9072575d8a924185c27d3da64899905f8548cbd9491a36" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" default))
  '(package-selected-packages
    '(evil use-package neotree monokai-theme ivy-file-preview gruvbox-theme goto-chg go-mode counsel company)))
 (custom-set-faces
