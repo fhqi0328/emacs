@@ -15,7 +15,7 @@
 (eval-and-compile
   (setq use-package-always-ensure t
 	use-package-expand-minimally t))
-  
+
 (use-package neotree
   ;; like NERDTree in Vim
   :ensure t
@@ -47,11 +47,10 @@
 	 ("C-r" . swiper-isearch-backward)
 	 ("C-x C-f" . counsel-find-file)
 	 ("C-x b" . ivy-switch-buffer)
-	 ("M-x" . 'counsel-M-x)
 	 ("C-M-j" . ivy-immediate-done))
   :init (setq ivy-count-format "(%d/%d) "
-              ivy-use-virtual-buffers t
-              enable-recursive-minibuffers t)
+	      ivy-use-virtual-buffers t
+	      enable-recursive-minibuffers t)
   :config (ivy-mode 1))
 
 (use-package company
@@ -79,6 +78,45 @@
   :ensure t
   :config (global-hl-todo-mode t))
 
+
+(use-package rust-mode
+  ;; rust mode
+  :ensure t
+  :mode "\\.rs\\'"
+  :init (setq rust-format-on-save t))
+
+
+(use-package projectile
+  :ensure t
+  :init  (projectile-mode +1)
+  :config (setq projectile-project-search-path '(("~/go/src/" . 2) "~/Documents/src/"))
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map)
+	      ("M-p" . projectile-command-map)))
+
+
+;; (use-package evil-collection
+;;   ;; a key-collection for evil mode
+;;   :ensure t
+;;   :init (setq evil-want-keybinding nil))
+
+
+;; (use-package evil
+;;   ;; add vim mode for Emacs
+;;   :ensure t
+;;   :init
+;;   (setq evil-want-C-u-scroll t)
+;;   (setq evil-want-keybinding nil)
+;;   :config
+;;   (evil-mode 1)
+;;   (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
+;;   (evil-collection-set-readonly-bindings 'xref--xref-buffer-mode-map)
+;;   (evil-collection-define-key 'normal 'xref--xref-buffer-mode-map
+;;     (kbd "RET") 'xref-goto-xref)
+;;   (define-key evil-motion-state-map (kbd "RET") 'Buffer-menu-this-window)
+;;   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+;;   (define-key evil-normal-state-map (kbd "?") 'swiper-isearch-backward)
+;;   (define-key evil-normal-state-map (kbd "/") 'swiper-isearch))
 
 
 ;;;;;;;;;;;;;;;;;;;

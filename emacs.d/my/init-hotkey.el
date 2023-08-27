@@ -22,6 +22,9 @@
 
 ;; 使用<F1>清除空格
 (global-set-key (kbd "<f1>") 'whitespace-cleanup)
+;; 使用<F2>打开NERDTree
+;; 使用<F3>进行xref搜索
+(global-set-key (kbd "<f3>") 'project-find-regexp)
 ;; 使用<F8>注释/取消注释
 (global-set-key (kbd "<f8>") 'comment-or-uncomment-region)
 

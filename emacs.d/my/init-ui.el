@@ -29,10 +29,12 @@
 (display-time-mode t)
 
 
+
 ;; 显示列线
 ;; 通过set-fill-column指定, 快捷键C-x f
 ;; (global-display-fill-column-indicator-mode t)
 
 
+
 ;;;;;;;;;;;;;;;;
-(provide 'init-font)
+(provide 'init-ui)
