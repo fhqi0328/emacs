@@ -1,7 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/my/")
 (require 'init-basic)
 (require 'init-plugin)
-(require 'init-font)
+(require 'init-ui)
 (require 'init-program)
 (require 'init-hotkey)
 

@@ -30,6 +30,10 @@
   :mode "\\.go\\'"
   :init (add-hook 'before-save-hook #'gofmt-before-save))
 
+(use-package counsel
+  :ensure t
+  :defer 1)
+
 (use-package swiper
   ;; comment: for ivy
   :ensure t
