@@ -70,6 +70,10 @@
   :config (load-theme 'gruvbox-dark-hard t))
 
 
+;; (use-package atom-dark-theme
+;;   :ensure t
+;;   :config (load-theme 'atom-dark t))
+
 (use-package hl-todo
   ;; highlight TODO keywords
   :ensure t
@@ -90,6 +94,15 @@
   :bind (:map projectile-mode-map
               ("C-c p" . projectile-command-map)))
 
+(use-package go-imenu
+  ;; enhance imenu for go
+  :ensure t
+  :defer 1)
+
+(use-package imenu-list
+  ;; enhanced
+  :ensure t
+  :defer 1)
 
 
 ;;;;;;;;;;;;;;;;;;;
