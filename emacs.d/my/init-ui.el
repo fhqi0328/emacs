@@ -9,8 +9,8 @@
   (toggle-scroll-bar 0))
 
 ;; 显示行号
-(global-linum-mode 1)
-(setq linum-format "%3d|")
+(global-display-line-numbers-mode t)
+(setq linum-format "%3d| ")
 
 ;; 显示列号
 (column-number-mode t)
@@ -28,11 +28,6 @@
 ;; 显示时间
 (display-time-mode t)
 
-
-
-;; 显示列线
-;; 通过set-fill-column指定, 快捷键C-x f
-;; (global-display-fill-column-indicator-mode t)
 
 
 
