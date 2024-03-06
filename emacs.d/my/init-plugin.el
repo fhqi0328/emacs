@@ -82,14 +82,6 @@
   :init (setq rust-format-on-save t))
 
 
-(use-package projectile
-  :ensure t
-  :init (projectile-mode +1)
-  :config (setq projectile-project-search-path '(("~/go/src/" . 2) "~/Documents/src/"))
-  :bind (:map projectile-mode-map
-	      ("C-c p" . projectile-command-map)))
-
-
 (use-package go-imenu
   ;; enhance imenu for go
   :ensure t
