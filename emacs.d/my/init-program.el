@@ -9,7 +9,8 @@
 (setq c-basic-offset 4)      
 
 
-;; python缩进设置
+;; python设置
+;;;; python缩进设置
 (set-variable 'python-indent-offset 4)
 (set-variable 'python-indent-guess-indent-offset nil)
 
