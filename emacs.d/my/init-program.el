@@ -10,6 +10,7 @@
 
 
 ;; python设置
+
 ;;;; python缩进设置
 (set-variable 'python-indent-offset 4)
 (set-variable 'python-indent-guess-indent-offset nil)
@@ -17,6 +18,7 @@
 
 ;; 显示括号匹配
 (show-paren-mode 1)
+
 
 ;; 括号自动补全(不习惯)
 ;; (electric-pair-mode t)

@@ -33,7 +33,6 @@
   (add-hook 'go-mode-hook 'company-mode))
 
 
-
 (use-package swiper
   ;; comment: for ivy
   :ensure t
@@ -106,7 +105,8 @@
   :hook ((prog-mode . company-mode)
 	 (text-mode . company-mode)
 	 (c-mode-hook . company-mode)
-	 (c++-mode-hook . company-mode)))
+	 (c++-mode-hook . company-mode)
+	 (python-mode . company-mode)))
 
 
 

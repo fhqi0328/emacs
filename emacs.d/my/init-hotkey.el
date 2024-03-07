@@ -33,12 +33,6 @@
 (global-set-key (kbd "<f8>") 'comment-or-uncomment-region)
 
 
-;; 使用Ctrl-x p s => project-find-regexp
-(global-set-key (kbd "C-c p s") 'project-find-regexp)
-;; 使用Ctrl-x p f => project-find-file
-(global-set-key (kbd "C-c p f") 'project-find-file)
-
-
 
 ;;;;;;;;;;;;;;;;;;;;
 (provide 'init-hotkey)
