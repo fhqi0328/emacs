@@ -33,6 +33,9 @@
 (global-set-key (kbd "<f8>") 'comment-or-uncomment-region)
 
 
+;; C-c j代替C-c C-j (C-j和tmux冲突)
+;; 使用counsel-imenu代替imenu
+(global-set-key (kbd "C-c j") 'counsel-imenu)
 
 ;;;;;;;;;;;;;;;;;;;;
 (provide 'init-hotkey)

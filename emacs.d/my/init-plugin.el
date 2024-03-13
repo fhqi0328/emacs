@@ -62,10 +62,13 @@
   :config (ivy-mode 1))
 
 
+;; (use-package gruvbox-theme
+;;   ;; color theme
+;;   :ensure t
+;;   :config (load-theme 'gruvbox-dark-soft t))
 (use-package gruvbox-theme
   ;; color theme
-  :ensure t
-  :config (load-theme 'gruvbox-dark-soft t))
+  :ensure t)
 
 
 (use-package hl-todo

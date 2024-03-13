@@ -33,6 +33,9 @@
 (display-time-mode t)
 
 
+;; 主题
+(load-theme 'wombat t)
+
 
 
 ;;;;;;;;;;;;;;;;
