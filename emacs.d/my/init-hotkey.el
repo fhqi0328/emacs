@@ -37,5 +37,13 @@
 ;; 使用counsel-imenu代替imenu
 (global-set-key (kbd "C-c j") 'counsel-imenu)
 
+;; project快捷键
+(global-set-key (kbd "C-c f") 'project-find-file)
+(global-set-key (kbd "C-c g") 'project-find-regexp)
+(global-set-key (kbd "C-c c") 'project-compile)
+(global-set-key (kbd "C-c e") 'project-eshell)
+(global-set-key (kbd "C-c b") 'project-switch-to-buffer)
+
+
 ;;;;;;;;;;;;;;;;;;;;
 (provide 'init-hotkey)

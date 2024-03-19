@@ -34,7 +34,8 @@
 
 
 ;; 主题
-(load-theme 'wombat t)
+;; (load-theme 'wombat t)
+(load-theme 'gruvbox t)
 
 
 
