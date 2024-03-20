@@ -19,7 +19,7 @@
   :ensure t
   :defer 1
   :bind(:map eglot-mode-map
-	     ("C-c C-d" . eldoc))
+	     ("C-c C-d" . eldoc)))
 
 (use-package go-mode
   ;; support go
