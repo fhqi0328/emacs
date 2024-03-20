@@ -35,7 +35,8 @@
 
 ;; 主题
 ;; (load-theme 'wombat t)
-(load-theme 'gruvbox t)
+;; (load-theme 'gruvbox t)
+(load-theme 'modus-vivendi t)
 
 
 
