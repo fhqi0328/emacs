@@ -14,6 +14,13 @@
 	use-package-expand-minimally t))
 
 
+(use-package eglot
+  ;; eglot is an alternative minimal LSP implementation
+  :ensure t
+  :defer 1
+  :bind(:map eglot-mode-map
+	     ("C-c C-d" . eldoc))
+
 (use-package go-mode
   ;; support go
   :ensure t
