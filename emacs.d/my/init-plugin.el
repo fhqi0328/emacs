@@ -4,8 +4,10 @@
 
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/") t)
+(setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+			 ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+			 ("elpa"   . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
 
