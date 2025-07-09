@@ -66,12 +66,6 @@
   :ensure t)
 
 
-(use-package hl-todo
-  ;; highlight TODO keywords
-  :ensure t
-  :config (global-hl-todo-mode t))
-
-
 (use-package rust-mode
   ;; rust mode
   :ensure t
