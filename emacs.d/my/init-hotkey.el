@@ -1,7 +1,6 @@
 ;; Comment
 ;; 快捷键配置文件
 
-
 ;; 使用ibuffer替换原buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -33,16 +32,12 @@
 (global-set-key (kbd "<f8>") 'comment-or-uncomment-region)
 
 
-;; C-c j代替C-c C-j (C-j和tmux冲突)
-;; 使用counsel-imenu代替imenu
-(global-set-key (kbd "C-c j") 'counsel-imenu)
+;; project快捷键记录
+;; C-x p e: project-eshell
+;; C-x p g: project-find-regexp
+;; C-x p f: project-find-file
 
-;; project快捷键
-(global-set-key (kbd "C-c f") 'project-find-file)
-(global-set-key (kbd "C-c g") 'project-find-regexp)
-(global-set-key (kbd "C-c c") 'project-compile)
-(global-set-key (kbd "C-c e") 'project-eshell)
-(global-set-key (kbd "C-c b") 'project-switch-to-buffer)
+
 
 
 ;;;;;;;;;;;;;;;;;;;;
