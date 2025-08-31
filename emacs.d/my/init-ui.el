@@ -4,7 +4,7 @@
 
 ;; 取消菜单栏/工具栏/滚动条
 (menu-bar-mode 0)
-(tool-bar-mode 0)
+;; (tool-bar-mode 0)
 (when (display-graphic-p)
   (toggle-scroll-bar 0))
 
