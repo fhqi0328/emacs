@@ -121,18 +121,5 @@
   :hook (after-init . save-place-mode))
 
 
-;; 高亮当前符号
-(use-package auto-highlight-symbol
-  :ensure t
-  :defer 1
-  :hook ((prog-mode . auto-highlight-symbol-mode)
-         (text-mode . auto-highlight-symbol-mode)
-         (c-mode-mode . auto-highlight-symbol-mode)
-         (c++-mode-mode . auto-highlight-symbol-mode)
-         (go-mode . auto-highlight-symbol-mode)
-         (python-mode . auto-highlight-symbol-mode)))
-
-
-
 ;;;;;;;;;;;;;;;;;;;
 (provide 'init-plugin)
