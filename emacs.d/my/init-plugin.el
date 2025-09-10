@@ -111,6 +111,11 @@
   :hook (after-init . save-place-mode))
 
 
+;; mode-line插件
+(use-package smart-mode-line
+  :ensure t
+  :init (sml/setup))
+
 
 ;;;;;;;;;;;;;;;;;;;
 (provide 'init-plugin)
