@@ -19,7 +19,7 @@
 (show-paren-mode 1)
 
 ;; 括号自动补全(不习惯)
-(electric-pair-mode t)
+;; (electric-pair-mode t)
 
 ;; 使用空格, 不使用tabs
 (setq-default indent-tabs-mode nil)

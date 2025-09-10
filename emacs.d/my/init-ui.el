@@ -35,7 +35,7 @@
 
 ;; 主题
 (load-theme 'modus-vivendi-tritanopia t)
-;; (load-theme 'modus-vivendi-deuteranopia t)
+;; (load-theme 'tango-dark t)
 
 
 ;;;;;;;;;;;;;;;;
