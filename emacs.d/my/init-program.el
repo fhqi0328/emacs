@@ -18,16 +18,14 @@
 ;; 显示括号匹配
 (show-paren-mode 1)
 
+;; 括号自动补全(不习惯)
+(electric-pair-mode t)
+
 ;; 使用空格, 不使用tabs
 (setq-default indent-tabs-mode nil)
 
-
-;; 括号自动补全(不习惯)
-;; (electric-pair-mode t)
-
-
-;;
-
+;; 开启completion-preview-mode
+(setq global-completion-preview-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;

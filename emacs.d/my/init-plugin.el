@@ -27,6 +27,7 @@
              ("C-c C-e" . eglot-code-action-extract)
              ("C-c C-r" . eglot-code-action-rewrite)))
 
+
 (use-package go-mode
   ;; support go
   :ensure t
@@ -34,8 +35,7 @@
   :mode "\\.go\\'"
   :config
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (add-hook 'go-mode-hook 'eglot-ensure)
-  (add-hook 'go-mode-hook 'company-mode))
+  (add-hook 'go-mode-hook 'eglot-ensure))
 
 
 (use-package swiper
@@ -101,6 +101,7 @@
          (text-mode . company-mode)
          (c-mode-hook . company-mode)
          (c++-mode-hook . company-mode)
+         (go-mode-hook . company-mode)
          (python-mode . company-mode)))
 
 
