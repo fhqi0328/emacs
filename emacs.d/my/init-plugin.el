@@ -67,10 +67,6 @@
   :config (ivy-mode 1))
 
 
-(use-package gruvbox-theme
-  ;; color theme
-  :ensure t)
-
 
 (use-package go-imenu
   ;; enhance imenu for go
@@ -108,17 +104,11 @@
          (python-mode . company-mode)))
 
 
-;; winner-mode(内置)
-;; winner-undo/redo可以恢复/撤销窗口布局
-(use-package winner-mode
-  :ensure nil
-  :hook (after-init . winner-mode))
-
-
 ;; saveplace(内置)
 (use-package saveplace
   :ensure nil
   :hook (after-init . save-place-mode))
+
 
 
 ;;;;;;;;;;;;;;;;;;;

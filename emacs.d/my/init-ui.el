@@ -34,8 +34,8 @@
 
 
 ;; 主题
-;; (load-theme 'gruvbox t)
 (load-theme 'modus-vivendi-tritanopia t)
+;; (load-theme 'modus-vivendi-deuteranopia t)
 
 
 ;;;;;;;;;;;;;;;;
