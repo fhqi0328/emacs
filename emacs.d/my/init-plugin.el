@@ -35,7 +35,9 @@
   :mode "\\.go\\'"
   :config
   (add-hook 'before-save-hook 'gofmt-before-save)
+  (add-hook 'go-mode-hook 'auto-highlight-symbol-mode)
   (add-hook 'go-mode-hook 'eglot-ensure))
+
 
 
 (use-package swiper
@@ -111,10 +113,12 @@
   :hook (after-init . save-place-mode))
 
 
-;; mode-line插件
-(use-package smart-mode-line
+;; 高亮当前符号
+(use-package auto-highlight-symbol
   :ensure t
-  :init (sml/setup))
+  :defer 1
+  :init (global-auto-highlight-symbol-mode t))
+
 
 
 ;;;;;;;;;;;;;;;;;;;
