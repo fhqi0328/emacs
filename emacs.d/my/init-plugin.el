@@ -107,18 +107,38 @@
          (python-mode . company-mode)))
 
 
-;; saveplace(内置)
-(use-package saveplace
-  :ensure nil
-  :hook (after-init . save-place-mode))
-
-
 ;; 高亮当前符号
 (use-package auto-highlight-symbol
   :ensure t
   :defer 1
   :init (global-auto-highlight-symbol-mode t))
 
+
+;; saveplace(内置)
+(use-package saveplace
+  :ensure nil
+  :hook (after-init . save-place-mode))
+
+
+;; which-key(内置)
+(use-package which-key
+  :ensure nil
+  :config (which-key-mode))
+
+
+;; tree-sitter(内置)
+;; 语言的语法解析器
+;; (use-package treesit
+;;   :ensure nil
+;;   :when (and (fboundp 'treesit-available-p)
+;;              (treesit-available-p))
+;;   :config (setq treesit-font-lock-level 4)
+;;   :init
+;;   (setq treesit-language-source-alist
+;;         '((go . ("https://github.com/tree-sitter/tree-sitter-go"))
+;;           (python . ("https://github.com/tree-sitter/tree-sitter-python"))))
+;;   (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
+;;   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode)))
 
 
 ;;;;;;;;;;;;;;;;;;;

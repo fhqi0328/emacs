@@ -28,5 +28,11 @@
 (setq global-completion-preview-mode t)
 
 
+;; flymake
+;; 直接在行末显示错误信息
+(setq flymake-show-diagnostics-at-end-of-line 'short)
+
+
+
 ;;;;;;;;;;;;;;;;;;;;
 (provide 'init-program)
