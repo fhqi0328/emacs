@@ -2,14 +2,23 @@
 ;; 插件配置文件
 
 
+;; 插件下载优先使用默认
+;; 如果默认下载失败，使用清华源
+;; 如果清华源连接不上端口443，临时改为http
+
 
 (require 'package)
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/") t)
-;; 如果连不上，使用国内源替代
-(add-to-list 'package-archives '("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/") t)
-(add-to-list 'package-archives '("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/") t)
+;; 默认源
+;; (setq package-archives
+;;       '(("gnu" . "https://melpa.org/packages/")
+;;      ("melpa" . "https://elpa.gnu.org/packages/")))
+;; 清华源
+(setq package-archives
+      '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
+
+
 
 
 (eval-and-compile
