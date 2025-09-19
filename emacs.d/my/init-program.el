@@ -30,7 +30,19 @@
 
 ;; flymake
 ;; 直接在行末显示错误信息
-(setq flymake-show-diagnostics-at-end-of-line 'short)
+;; (终端下，会影响补全窗口弹出位置)
+;; (setq flymake-show-diagnostics-at-end-of-line 'short)
+
+
+;; 设置复用窗口
+;; (setq display-buffer-reuse-frames t)
+
+
+;; 编程几个常用的内置功能
+(add-hook 'prog-mode-hook 'column-number-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'flymake-mode)
+
 
 
 
