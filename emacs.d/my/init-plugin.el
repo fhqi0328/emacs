@@ -1,5 +1,6 @@
-;; Comment
-;; 插件配置文件
+;;; package --- Package:
+;;; Commentary:
+;;; 插件配置文件
 
 
 ;; 插件下载优先使用默认
@@ -150,5 +151,14 @@
 ;;   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode)))
 
 
+;; 五笔插件
+(use-package chinese-wbim
+  :ensure t
+  :defer 1
+  :init (register-input-method "chinese-wbim" "euc-cn" 'chinese-wbim-use-package "五笔" "汉字五笔输入法" "wb.txt"))
+
+
 ;;;;;;;;;;;;;;;;;;;
 (provide 'init-plugin)
+
+;;; init-plugin.el ends here
